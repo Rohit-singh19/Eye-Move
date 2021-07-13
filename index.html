@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eyes</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="eyes">
+        <div class="eye">
+            <div class="ball"></div>
+        </div>
+        
+        <div class="eye">
+            <div class="ball"></div>
+        </div>
+    </div>
+
+    <script>
+        const balls = document.querySelectorAll('.ball');
+
+        document.addEventListener('mousemove', ()=>{
+            let x = event.clientX * 100 / window.innerWidth + "%";
+            let y = event.clientY * 100 / window.innerHeight + "%";
+
+            balls.forEach(e =>{
+                e.style.left = x;
+                e.style.top = y;
+
+                e.style.transform = "translate(-"+x+",-"+y+")";
+            });
+        });
+
+
+    </script>
+</body>
+</html>
